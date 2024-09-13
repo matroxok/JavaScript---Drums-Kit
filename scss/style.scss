@@ -38,7 +38,7 @@ section {
 	height: 100px;
 	font-size: 30px;
 	font-weight: bold;
-	// text-align: center;
+	transition: all linear 0.07s;
 	border: 1px solid lime;
 
 	p {
@@ -48,4 +48,11 @@ section {
 		text-transform: uppercase;
 		color: gold;
 	}
+}
+
+.test {
+	transform: scale(1.1);
+	border-color: antiquewhite;
+	background-color: black;
+	box-shadow: 3px 4px 10px 0.5px rgba(255, 170, 0, 1);
 }
