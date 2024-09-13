@@ -1,3 +1,4 @@
+const keys = document.querySelectorAll('.key')
 const keyClick = e => {
 	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
 	// console.log(audio)
@@ -5,7 +6,7 @@ const keyClick = e => {
 	if (audio != null) {
 		audio.currentTime = 0
 		audio.play()
-	} else if (audio === null) {
+	} else {
 		console.warn('BLAD')
 		// dodac tutaj popup ze klawisz jest bledny
 	}
@@ -13,10 +14,24 @@ const keyClick = e => {
 
 const keyAnimation = e => {
 	const animation = document.querySelector(`.key[data-key="${e.keyCode}"]`)
-	console.log(animation)
+	// console.log(animation)
 
-	animation.classList.add('test')
+	if (animation != null) {
+		animation.classList.add('test')
+	} else {
+		console.warn('BLAD')
+	}
 }
 
+function removeTransition(e) {
+	if (e.propertyName !== 'transform') {
+		return
+	} else {
+		// console.log((e.propertyName = 'transform'))
+		this.classList.remove('test')
+	}
+}
+
+keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 document.addEventListener('keydown', keyClick)
 document.addEventListener('keydown', keyAnimation)
