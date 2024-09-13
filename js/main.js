@@ -17,7 +17,7 @@ const keyAnimation = e => {
 	// console.log(animation)
 
 	if (animation != null) {
-		animation.classList.add('test')
+		animation.classList.add('playing')
 	} else {
 		console.warn('BLAD')
 	}
@@ -28,7 +28,7 @@ function removeTransition(e) {
 		return
 	} else {
 		// console.log((e.propertyName = 'transform'))
-		this.classList.remove('test')
+		this.classList.remove('playing')
 	}
 }
 
